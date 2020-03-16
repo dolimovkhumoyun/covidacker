@@ -21,7 +21,7 @@ const Scanner = () => {
         onScan={handleScan}
         style={{ height: 375, width: "100vw" }}
       />
-      <p style={{ marginTop: "50%" }}>Hello {result}</p>
+      <p style={{ marginTop: "30%" }}>{result}</p>
     </div>
   );
 };

@@ -13,7 +13,9 @@ const useStyles = makeStyles({
     marginRight: 20
   },
   title: {
-    fontSize: 14
+    fontSize: 20,
+    textAlign: "center",
+    marginBottom: 30
   }
 });
 
@@ -22,8 +24,8 @@ const LoginCard = ({ onSubmit }) => {
   return (
     <Card className={classes.root}>
       <CardContent>
-        <Typography className={classes.title} color="textSecondary" gutterBottom>
-          {/* Please enter your Passport Serial */}
+        <Typography variant="h5" component="h2" className={classes.title}>
+          Covidacker
         </Typography>
         <LoginForm onSubmit={onSubmit} />
       </CardContent>
