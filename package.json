@@ -18,7 +18,8 @@
     "react-qr-reader": "^2.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "react-text-mask": "^5.4.3"
+    "react-text-mask": "^5.4.3",
+    "react-vertical-timeline-component": "^2.5.0"
   },
   "scripts": {
     "start": "react-scripts start",

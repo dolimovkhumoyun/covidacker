@@ -11,10 +11,13 @@ import ExploreIcon from "@material-ui/icons/Explore";
 const useStyles = makeStyles({
   stickToBottom: {
     width: "100%",
-    position: "absolute",
+    position: "fixed",
     height: 70,
     bottom: 0,
-    backgroundColor: "#F5F5F5"
+    backgroundColor: "#5AB1EF"
+  },
+  menu: {
+    color: "white"
   }
 });
 
@@ -39,13 +42,24 @@ const BottomNav = () => {
       position="fixed"
       className={classes.stickToBottom}
     >
-      <BottomNavigationAction label="Scanner" value="/dashboard/" icon={<CropFreeRoundedIcon />} />{" "}
+      <BottomNavigationAction
+        label="Scanner"
+        value="/dashboard/"
+        icon={<CropFreeRoundedIcon />}
+        style={{ color: "white" }}
+      />
       <BottomNavigationAction
         label="Table view"
         value="/dashboard/table"
         icon={<EditLocationOutlinedIcon />}
+        style={{ color: "white" }}
       />
-      <BottomNavigationAction label="Map view" value="/dashboard/explore" icon={<ExploreIcon />} />
+      <BottomNavigationAction
+        label="Map view"
+        value="/dashboard/explore"
+        icon={<ExploreIcon />}
+        style={{ color: "white" }}
+      />
     </BottomNavigation>
   );
 };
