@@ -10,6 +10,7 @@ export const sendPostId = (post_id, history) => {
     user_id: user_id
   };
   axios.post(url, data).then(res => {
+    console.log(res);
     if (res.data.status === 200) {
       //   localStorage.setItem("user_id", res.data.data[0].id);
       history.push("/dashboard/table");

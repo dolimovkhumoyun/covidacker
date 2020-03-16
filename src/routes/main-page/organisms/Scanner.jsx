@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import QrReader from "react-qr-reader";
 import { sendPostId } from "../api";
 
 const Scanner = ({ history }) => {
   const [result, setResult] = useState("");
+
+  // useEffect(() => {
+  //   let post_id = "post_id=1".split("=")[1];
+  //   sendPostId(post_id, history);
+  // }, []);
 
   const handleScan = data => {
     if (data) {
