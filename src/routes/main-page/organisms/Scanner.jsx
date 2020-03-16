@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import QrReader from "react-qr-reader";
+import { sendPostId } from "../api";
 
-const Scanner = () => {
+const Scanner = props => {
   const [result, setResult] = useState("");
 
   const handleScan = data => {
     if (data) {
+      alert(data);
       setResult(data);
+      // sendPostId(data, props.history);
     }
   };
   const handleError = err => {
     console.error(err);
   };
-  console.log(result);
   return (
     <div>
       <QrReader
@@ -21,7 +23,6 @@ const Scanner = () => {
         onScan={handleScan}
         style={{ height: 375, width: "100vw" }}
       />
-      <p style={{ marginTop: "30%" }}>{result}</p>
     </div>
   );
 };
