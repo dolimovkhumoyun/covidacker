@@ -7,9 +7,10 @@ const Scanner = props => {
 
   const handleScan = data => {
     if (data) {
-      alert(data);
+      // alert(data);
+      let post_id = data.split("=")[1];
       setResult(data);
-      // sendPostId(data, props.history);
+      sendPostId(post_id, props.history);
     }
   };
   const handleError = err => {

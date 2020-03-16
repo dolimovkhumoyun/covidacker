@@ -12,7 +12,7 @@ export const sendPostId = (post_id, history) => {
   axios.post(url, data).then(res => {
     if (res.data.status === 200) {
       //   localStorage.setItem("user_id", res.data.data[0].id);
-      history.push("/dashboard");
+      history.push("/dashboard/table");
     } else {
       console.error(res.data.message);
     }

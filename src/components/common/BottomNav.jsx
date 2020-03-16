@@ -42,7 +42,7 @@ const BottomNav = () => {
       <BottomNavigationAction label="Scanner" value="/dashboard/" icon={<CropFreeRoundedIcon />} />{" "}
       <BottomNavigationAction
         label="Table view"
-        value="/dashboard/list"
+        value="/dashboard/table"
         icon={<EditLocationOutlinedIcon />}
       />
       <BottomNavigationAction label="Map view" value="/dashboard/explore" icon={<ExploreIcon />} />
