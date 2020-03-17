@@ -1,22 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import "./atoms/index.scss";
 import LoginCard from "./organisms/LoginCard";
 import { Grid } from "@material-ui/core";
 import { getUser } from "./api/index";
+import ConfirmDialog from "./molecules/CustomDialog";
+import Snackbar from "@material-ui/core/Snackbar";
+import MuiAlert from "@material-ui/lab/Alert";
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const Login = props => {
+  const [passport, setPassport] = useState("");
+  const [open, setOpen] = useState(false);
+  const [isAlert, setAlert] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const onConfirm = e => {
+    setOpen(false);
+    getUser(passport, props.history);
+  };
+
   const onSubmit = value => {
-    if (/^([a-zA-Z]{2}\d{7})$/.test(value)) {
-      getUser(value, props.history);
+    if (value.length <= 8) setAlert(true);
+    else {
+      setOpen(true);
+      setPassport(value);
     }
   };
 
   return (
-    <Grid container>
-      <div className="container">
+    <div className="main">
+      <Grid container direction="row" justify="center" alignItems="center">
         <LoginCard onSubmit={onSubmit} />
-      </div>
-    </Grid>
+        <ConfirmDialog
+          isOpen={open}
+          onClose={handleClose}
+          onOpen={handleClickOpen}
+          onConfirm={onConfirm}
+          passport={passport}
+        />
+        <Snackbar
+          open={isAlert}
+          autoHideDuration={6000}
+          onClose={() => setAlert(false)}
+          anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        >
+          <Alert onClose={() => setAlert(false)} severity="error">
+            Passport Serials must be at least 8 chars!
+          </Alert>
+        </Snackbar>
+      </Grid>
+    </div>
   );
 };
 

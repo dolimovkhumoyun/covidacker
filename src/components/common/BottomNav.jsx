@@ -56,7 +56,7 @@ const BottomNav = () => {
       />
       <BottomNavigationAction
         label="Map view"
-        value="/dashboard/explore"
+        value="/dashboard/map"
         icon={<ExploreIcon />}
         style={{ color: "white" }}
       />
