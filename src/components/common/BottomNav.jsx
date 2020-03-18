@@ -6,7 +6,8 @@ import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import EditLocationOutlinedIcon from "@material-ui/icons/EditLocationOutlined";
 import CropFreeRoundedIcon from "@material-ui/icons/CropFreeRounded";
-import ExploreIcon from "@material-ui/icons/Explore";
+import ExploreOutlinedIcon from "@material-ui/icons/ExploreOutlined";
+import PersonOutlinedIcon from "@material-ui/icons/PersonOutlined";
 
 const useStyles = makeStyles({
   stickToBottom: {
@@ -57,7 +58,13 @@ const BottomNav = () => {
       <BottomNavigationAction
         label="Map view"
         value="/dashboard/map"
-        icon={<ExploreIcon />}
+        icon={<ExploreOutlinedIcon />}
+        style={{ color: "white" }}
+      />
+      <BottomNavigationAction
+        label="Profile"
+        value="/dashboard/profile"
+        icon={<PersonOutlinedIcon />}
         style={{ color: "white" }}
       />
     </BottomNavigation>

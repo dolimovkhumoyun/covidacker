@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 
-import InfiniteScroll from "react-infinite-scroller";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
@@ -33,19 +32,8 @@ const CustomTimeline = ({ data }) => {
   const loadFunc = e => {};
 
   return (
-    <VerticalTimeline animate={false}>
-      <InfiniteScroll
-        pageStart={0}
-        loadMore={loadFunc}
-        hasMore={true}
-        loader={
-          <div className="loader" key={0}>
-            Loading ...
-          </div>
-        }
-      >
-        {data.map((item, index, data) => renderTimelineElements(item, index, data.length))}
-      </InfiniteScroll>
+    <VerticalTimeline animate={false} style={{ marginBottom: 50 }}>
+      {data.map((item, index, data) => renderTimelineElements(item, index, data.length))}
     </VerticalTimeline>
   );
 };

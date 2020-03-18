@@ -1,24 +1,18 @@
-import React, { useState } from "react";
-import FlightMap from "./organisms/FlightMap";
+import React, { useEffect, useState } from "react";
+import RouteMap from "./organisms/RouteMap";
 import { Grid } from "@material-ui/core";
+import { getMap } from "./api/index";
 
 const MapView = () => {
-  const [markerPosition, setMarkerPosition] = useState({
-    lat: 49.8419,
-    lng: 24.0315
-  });
-  const { lat, lng } = markerPosition;
+  const [cords, setCoords] = useState([]); // coordinates
 
-  function moveMarker() {
-    setMarkerPosition({
-      lat: lat + 0.0001,
-      lng: lng + 0.0001
-    });
-  }
+  useEffect(() => {
+    getMap(setCoords);
+  }, []);
 
   return (
     <Grid container>
-      <FlightMap markerPosition={markerPosition} />
+      <RouteMap coords={cords} />
     </Grid>
   );
 };

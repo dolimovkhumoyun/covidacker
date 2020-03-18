@@ -5,7 +5,6 @@ import { sendPostId } from "../api";
 const Scanner = ({ history }) => {
   const handleScan = data => {
     if (data) {
-      alert(data);
       let post_id = data.split("=")[1];
       sendPostId(post_id, history);
     }
@@ -13,7 +12,6 @@ const Scanner = ({ history }) => {
   const handleError = err => {
     console.error(err);
   };
-  console.log(history);
   return (
     <div>
       <QrReader

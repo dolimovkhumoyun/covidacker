@@ -4,10 +4,8 @@ import RoadTrack from "./organisms/RoadTrack";
 
 const Table = () => {
   return (
-    <Grid container>
-      <div className="container">
-        <RoadTrack />
-      </div>
+    <Grid container style={{ backgroundColor: "#F5F5F5", marginBottom: 60 }}>
+      <RoadTrack />
     </Grid>
   );
 };
