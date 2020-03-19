@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-const CustomTimeline = ({ data }) => {
+const CustomTimeline = ({ data, total }) => {
   const renderTimelineElements = (item, index, length) => {
     return (
       <VerticalTimelineElement
@@ -20,19 +20,22 @@ const CustomTimeline = ({ data }) => {
           fontWeight: "bold",
           lineHeight: "37px"
         }}
-        icon={<Fragment>{length - index}</Fragment>}
+        icon={<Fragment>{total - index}</Fragment>}
+        style={{ width: "80vw" }}
       >
         <h3 className="vertical-timeline-element-title">{item.name}</h3>
-        <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-        <p>Creative Direction, User Experience, Visual Design, Project Management, Team Leading</p>
+        <h4 className="vertical-timeline-element-subtitle">
+          {item.district}, {item.region}
+        </h4>
+        <p style={{ display: "none" }}>
+          Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+        </p>
       </VerticalTimelineElement>
     );
   };
 
-  const loadFunc = e => {};
-
   return (
-    <VerticalTimeline animate={false} style={{ marginBottom: 50 }}>
+    <VerticalTimeline animate={false} style={{ marginBottom: 50, width: "80%" }}>
       {data.map((item, index, data) => renderTimelineElements(item, index, data.length))}
     </VerticalTimeline>
   );
