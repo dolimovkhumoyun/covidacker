@@ -1,6 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 
-import { YMaps, Map, GeoObject, Placemark, ZoomControl } from "react-yandex-maps";
+import {
+  YMaps,
+  Map,
+  GeoObject,
+  Placemark,
+  ZoomControl
+} from "react-yandex-maps";
 
 const RouteMap = ({ coords }) => {
   const reverseLatLong = array => {
@@ -10,16 +16,20 @@ const RouteMap = ({ coords }) => {
   };
 
   let coordinates = [];
-  if (coords.length !== 0) {
+  console.log(coords);
+  if (
+    coords.length !== 0 &&
+    coords[0].hasOwnProperty("geometry") &&
+    coords[0].geometry !== null
+  ) {
     coordinates = coords[0].geometry.coordinates;
   }
 
-  const onClick = e => {
-    console.log(e.get("coords"));
-  };
-
   return (
-    <div id="map" style={{ position: "absolute", top: 0, bottom: 70, width: "100%" }}>
+    <div
+      id="map"
+      style={{ position: "absolute", top: 0, bottom: 70, width: "100%" }}
+    >
       <YMaps>
         <Map
           defaultState={{

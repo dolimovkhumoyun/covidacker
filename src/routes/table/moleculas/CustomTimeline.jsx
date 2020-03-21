@@ -1,6 +1,9 @@
 import React, { Fragment } from "react";
 
-import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement
+} from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
 const CustomTimeline = ({ data, total }) => {
@@ -9,7 +12,11 @@ const CustomTimeline = ({ data, total }) => {
       <VerticalTimelineElement
         key={index}
         className="vertical-timeline-element--work"
-        contentStyle={index % 2 === 0 ? {} : { background: "rgb(33, 150, 243)", color: "#fff" }}
+        contentStyle={
+          index % 2 === 0
+            ? {}
+            : { background: "rgb(33, 150, 243)", color: "#fff" }
+        }
         contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
         date={item.the_date}
         iconStyle={{
@@ -28,15 +35,21 @@ const CustomTimeline = ({ data, total }) => {
           {item.district}, {item.region}
         </h4>
         <p style={{ display: "none" }}>
-          Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+          Creative Direction, User Experience, Visual Design, Project
+          Management, Team Leading
         </p>
       </VerticalTimelineElement>
     );
   };
 
   return (
-    <VerticalTimeline animate={false} style={{ marginBottom: 50, width: "80%" }}>
-      {data.map((item, index, data) => renderTimelineElements(item, index, data.length))}
+    <VerticalTimeline
+      animate={false}
+      style={{ marginBottom: 50, width: "80%" }}
+    >
+      {data.map((item, index, data) =>
+        renderTimelineElements(item, index, data.length)
+      )}
     </VerticalTimeline>
   );
 };
