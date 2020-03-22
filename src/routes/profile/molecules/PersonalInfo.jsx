@@ -51,7 +51,11 @@ const PersonalInfo = ({ passport }) => {
   return (
     <Card className={classes.root}>
       <CardContent style={{ marginBottom: 30 }}>
-        <List component="nav" aria-label="main mailbox folders" className={classes.list}>
+        <List
+          component="nav"
+          aria-label="main mailbox folders"
+          className={classes.list}
+        >
           <Divider />
           <ListItem button>
             <ListItemIcon>
@@ -62,7 +66,7 @@ const PersonalInfo = ({ passport }) => {
                 {passport}
               </Typography>
               <Typography className={classes.pos} color="textSecondary">
-                passport serials
+                Паспорт рақами
               </Typography>
             </ListItemText>
           </ListItem>

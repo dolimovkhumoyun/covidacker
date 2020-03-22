@@ -8,9 +8,9 @@ export const getUser = (passport, history) => {
     passport: passport
   };
   axios.post(url, data).then(res => {
-    console.log(res);
     if (res.data.status === 200) {
       localStorage.setItem("user_id", res.data.data[0].id);
+      localStorage.setItem("passport", passport);
       history.push("/dashboard");
     } else {
       console.error(res.data.message);

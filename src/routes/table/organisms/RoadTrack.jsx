@@ -3,7 +3,6 @@ import CustomTimeline from "../moleculas/CustomTimeline";
 import { getRoadTrack } from "../api";
 
 import InfiniteScroll from "react-infinite-scroll-component";
-import LinearProgress from "@material-ui/core/LinearProgress";
 
 const RoadTrack = () => {
   const [data, setData] = useState([]);
@@ -11,7 +10,7 @@ const RoadTrack = () => {
 
   useEffect(() => {
     getRoadTrack(data.length, 6, setData, setTotal);
-  }, []);
+  }, [data.length]);
 
   const fetchData = e => {
     getRoadTrack(data.length, 6, setData, setTotal);
@@ -28,14 +27,22 @@ const RoadTrack = () => {
       loader={""}
       endMessage={
         <p style={{ textAlign: "center" }}>
-          <b>Yay! You have seen it all</b>
+          <b>Барча маълумотларни кўриб бўлдингиз</b>
         </p>
       }
       // below props only if you need pull down functionality
       refreshFunction={refresh}
       pullDownToRefresh
-      pullDownToRefreshContent={<h3 style={{ textAlign: "center" }}>&#8595; Pull down to refresh</h3>}
-      releaseToRefreshContent={<h3 style={{ textAlign: "center" }}>&#8593; Release to refresh</h3>}
+      pullDownToRefreshContent={
+        <h3 style={{ textAlign: "center" }}>
+          &#8595; Янгилаш учун пастга тортинг
+        </h3>
+      }
+      releaseToRefreshContent={
+        <h3 style={{ textAlign: "center" }}>
+          &#8593; Янгилаш учун озод қилинг
+        </h3>
+      }
       style={{ width: "100vw" }}
     >
       <CustomTimeline data={data} total={total} />

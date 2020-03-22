@@ -46,7 +46,7 @@ const InfoCard = () => {
           <AccountCircleIcon />
         </Avatar>
         <Typography variant="h5" component="h2" className={classes.heading}>
-          Profile Information
+          Профил маълумотлари
         </Typography>
       </CardContent>
     </Card>

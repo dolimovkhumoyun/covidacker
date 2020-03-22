@@ -11,7 +11,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const ConfirmDialog = ({ isOpen, onOpen, onClose, onConfirm, passport }) => {
+const ConfirmDialog = ({ isOpen, onClose, onConfirm, passport }) => {
   return (
     <div>
       <Dialog
@@ -22,18 +22,20 @@ const ConfirmDialog = ({ isOpen, onOpen, onClose, onConfirm, passport }) => {
         aria-labelledby="alert-dialog-slide-title"
         aria-describedby="alert-dialog-slide-description"
       >
-        <DialogTitle id="alert-dialog-slide-title">{"Confirm this Passport Serials?"}</DialogTitle>
+        <DialogTitle id="alert-dialog-slide-title">
+          {"Ушбу паспорт рақамини тасдиқлайсизми?"}
+        </DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            <strong>{passport}</strong> is this your passport? <br />
+            <strong>{passport}</strong> бу сизнинг паспортингизми? <br />
           </DialogContentText>
         </DialogContent>
         <DialogActions>
           <Button onClick={onClose} color="primary">
-            Disagree
+            Йўқ
           </Button>
           <Button onClick={onConfirm} color="primary">
-            Agree
+            Ҳа
           </Button>
         </DialogActions>
       </Dialog>

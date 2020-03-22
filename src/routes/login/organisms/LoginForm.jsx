@@ -42,8 +42,8 @@ const LoginForm = ({ onSubmit }) => {
     <Paper className={classes.root} onKeyDown={onKeyPress}>
       <InputBase
         className={classes.input}
-        placeholder="Passport Serials"
-        inputProps={{ "aria-label": "passport serials" }}
+        placeholder="Паспорт рақами"
+        inputProps={{ "aria-label": "Паспорт рақами" }}
         value={passport}
         onChange={e => setPassport(e.target.value.toUpperCase())}
       />

@@ -55,7 +55,7 @@ const Login = props => {
           anchorOrigin={{ vertical: "top", horizontal: "center" }}
         >
           <Alert onClose={() => setAlert(false)} severity="error">
-            Passport Serials must be at least 8 chars!
+            Паспорт рақами камида 8 та белгидан иборат бўлиши керак!
           </Alert>
         </Snackbar>
       </Grid>

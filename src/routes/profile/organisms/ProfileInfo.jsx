@@ -27,7 +27,7 @@ const ProfileInfo = () => {
         <InfoCard />
       </Grid>
       <Grid item>
-        <PersonalInfo passport={"AA 1234567"} />
+        <PersonalInfo passport={localStorage.getItem("passport")} />
       </Grid>
     </Grid>
   );

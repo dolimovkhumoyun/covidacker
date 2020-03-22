@@ -33,6 +33,10 @@ const RouteMap = ({ coords }) => {
       <YMaps>
         <Map
           defaultState={{
+            bounds: [
+              [37.16636, 55.97708],
+              [45.598, 73.17463]
+            ],
             center: [41.3775, 64.5853],
             zoom: 5
           }}

@@ -44,25 +44,25 @@ const BottomNav = () => {
       className={classes.stickToBottom}
     >
       <BottomNavigationAction
-        label="Scanner"
+        label="Сканер"
         value="/dashboard/"
         icon={<CropFreeRoundedIcon />}
         style={{ color: "white" }}
       />
       <BottomNavigationAction
-        label="Table view"
+        label="Жадвал"
         value="/dashboard/table"
         icon={<EditLocationOutlinedIcon />}
         style={{ color: "white" }}
       />
       <BottomNavigationAction
-        label="Map view"
+        label="Харита"
         value="/dashboard/map"
         icon={<ExploreOutlinedIcon />}
         style={{ color: "white" }}
       />
       <BottomNavigationAction
-        label="Profile"
+        label="Профил"
         value="/dashboard/profile"
         icon={<PersonOutlinedIcon />}
         style={{ color: "white" }}
