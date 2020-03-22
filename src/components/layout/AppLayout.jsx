@@ -4,11 +4,12 @@ import AppContent from "./AppContent";
 import { Grid } from "@material-ui/core";
 
 const App = ({ props }) => {
+  const { pathname } = props.location;
   return (
     <React.Fragment>
       <Grid container>
         <AppContent props={props} />
-        <BottomNav />
+        {pathname !== "/" && <BottomNav />}
       </Grid>
     </React.Fragment>
   );
