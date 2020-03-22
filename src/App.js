@@ -7,7 +7,7 @@ const App = () => {
   return (
     <Fragment>
       <Switch>
-        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/main" component={Dashboard} />
         <Route path="/" component={Login} />
       </Switch>
     </Fragment>

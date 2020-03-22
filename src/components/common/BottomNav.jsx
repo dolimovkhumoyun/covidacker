@@ -45,25 +45,25 @@ const BottomNav = () => {
     >
       <BottomNavigationAction
         label="Сканер"
-        value="/dashboard/"
+        value="/main"
         icon={<CropFreeRoundedIcon />}
         style={{ color: "white" }}
       />
       <BottomNavigationAction
         label="Жадвал"
-        value="/dashboard/table"
+        value="/main/table"
         icon={<EditLocationOutlinedIcon />}
         style={{ color: "white" }}
       />
       <BottomNavigationAction
         label="Харита"
-        value="/dashboard/map"
+        value="/main/map"
         icon={<ExploreOutlinedIcon />}
         style={{ color: "white" }}
       />
       <BottomNavigationAction
         label="Профил"
-        value="/dashboard/profile"
+        value="/main/profile"
         icon={<PersonOutlinedIcon />}
         style={{ color: "white" }}
       />

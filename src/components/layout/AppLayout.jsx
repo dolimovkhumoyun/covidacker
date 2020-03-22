@@ -7,7 +7,7 @@ const App = ({ props }) => {
   return (
     <React.Fragment>
       <Grid container>
-        <AppContent />
+        <AppContent props={props} />
         <BottomNav />
       </Grid>
     </React.Fragment>

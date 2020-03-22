@@ -11,7 +11,7 @@ export const getUser = (passport, history) => {
     if (res.data.status === 200) {
       localStorage.setItem("user_id", res.data.data[0].id);
       localStorage.setItem("passport", passport);
-      history.push("/dashboard");
+      history.push("/main");
     } else {
       console.error(res.data.message);
     }

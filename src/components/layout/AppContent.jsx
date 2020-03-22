@@ -5,14 +5,17 @@ import Table from "../../routes/table";
 import MapView from "../../routes/map-view";
 import Profile from "../../routes/profile";
 
-const AppContent = () => {
+const AppContent = ({ props }) => {
+  console.log(props);
+  const { url } = props.match;
+  console.log(`${url}`);
   return (
     <React.Fragment>
       <Switch>
-        <Route path="/dashboard/profile" component={Profile} />
-        <Route path="/dashboard/map" component={MapView} />
-        <Route path="/dashboard/table" component={Table} />
-        <Route path="/dashboard" component={Main} />
+        <Route path="/main/profile" component={Profile} />
+        <Route path="/main/map" component={MapView} />
+        <Route path="/main/table" component={Table} />
+        <Route path="/" component={Main} />
       </Switch>
     </React.Fragment>
   );

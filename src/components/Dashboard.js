@@ -2,10 +2,10 @@ import React from "react";
 import App from "./layout/AppLayout";
 import { Grid } from "@material-ui/core";
 
-const Dashboard = () => {
+const Dashboard = props => {
   return (
     <Grid container>
-      <App />
+      <App props={props} />
     </Grid>
   );
 };

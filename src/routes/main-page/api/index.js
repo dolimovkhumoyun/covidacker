@@ -11,7 +11,7 @@ export const sendPostId = (post_id, setIsScanned, setAlert, history) => {
   };
   axios.post(url, data).then(res => {
     if (res.data.status === 200) {
-      history.push("/dashboard/table");
+      history.push("/table");
     } else {
       setAlert(true);
       setIsScanned(false);
