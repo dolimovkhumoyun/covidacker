@@ -51,19 +51,19 @@ const BottomNav = () => {
       />
       <BottomNavigationAction
         label="Жадвал"
-        value="/main/table"
+        value="/table"
         icon={<EditLocationOutlinedIcon />}
         style={{ color: "white" }}
       />
       <BottomNavigationAction
         label="Харита"
-        value="/main/map"
+        value="/map"
         icon={<ExploreOutlinedIcon />}
         style={{ color: "white" }}
       />
       <BottomNavigationAction
         label="Профил"
-        value="/main/profile"
+        value="/profile"
         icon={<PersonOutlinedIcon />}
         style={{ color: "white" }}
       />

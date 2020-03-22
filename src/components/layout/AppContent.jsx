@@ -11,9 +11,9 @@ const AppContent = ({ props }) => {
   return (
     <React.Fragment>
       <Switch>
-        <Route path="/main/profile" component={Profile} />
-        <Route path="/main/map" component={MapView} />
-        <Route path="/main/table" component={Table} />
+        <Route path="/profile" component={Profile} />
+        <Route path="/map" component={MapView} />
+        <Route path="/table" component={Table} />
         <Route path="/main" component={Main} />
         <Route path="/" component={Login} />
       </Switch>
