@@ -6,8 +6,7 @@ import MapView from "../../routes/map-view";
 import Profile from "../../routes/profile";
 import Login from "./../../routes/login/index";
 
-const AppContent = ({ props }) => {
-  const { url } = props.match;
+const AppContent = () => {
   return (
     <React.Fragment>
       <Switch>

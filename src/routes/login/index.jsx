@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./atoms/index.scss";
 import LoginCard from "./organisms/LoginCard";
 import { Grid } from "@material-ui/core";
@@ -15,6 +15,13 @@ const Login = props => {
   const [passport, setPassport] = useState("");
   const [open, setOpen] = useState(false);
   const [isAlert, setAlert] = useState(false);
+
+  useEffect(() => {
+    let user = localStorage.getItem("user_id");
+    if (user !== null) {
+      props.history.push("/main");
+    }
+  }, []);
 
   const handleClickOpen = () => {
     setOpen(true);

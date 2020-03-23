@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import ProfileInfo from "./organisms/ProfileInfo";
 
@@ -22,6 +22,13 @@ const useStyles = makeStyles(theme => ({
 
 const Profile = props => {
   const classes = useStyles();
+
+  useEffect(() => {
+    let user = localStorage.getItem("user_id");
+    if (user === null) {
+      props.history.push("/");
+    }
+  }, []);
 
   const onLogout = () => {
     localStorage.clear();

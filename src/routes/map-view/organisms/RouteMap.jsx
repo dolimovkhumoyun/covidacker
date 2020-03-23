@@ -16,7 +16,6 @@ const RouteMap = ({ coords }) => {
   };
 
   let coordinates = [];
-  console.log(coords);
   if (
     coords.length !== 0 &&
     coords[0].hasOwnProperty("geometry") &&

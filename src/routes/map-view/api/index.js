@@ -7,7 +7,6 @@ export const getMap = setData => {
   let url = `${base_url}map?user_id=${user_id}`;
 
   axios.get(url).then(res => {
-    console.log(res);
     if (res.data.status === 200) {
       setData(res.data.data);
     } else {
